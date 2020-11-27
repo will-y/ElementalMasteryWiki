@@ -33,20 +33,20 @@ jobs:
         with:
           artifacts: "dist/ElementalMasteryWiki/*"
           token: ${{ secrets.TOKEN }}
-          tag: v0.2.4
+          tag: v0.2.5
   deploy:
     needs: build
     runs-on: self-hosted
 
       # Steps represent a sequence of tasks that will be executed as part of the job
-      steps:
+    steps:
 
         # Runs a single command using the runners shell
-        - name: Run Download Script
-          run: ./downloadrelease.sh
+      - name: Run Download Script
+        run: ./downloadrelease.sh
 
         # Runs a set of commands using the runners shell
-        - name: Deletes the Old Version and Copies in the new
-          run: |
-            sudo rm /var/www/html/*
-            sudo cp $LATEST_VERSION/* /var/www/html
+      - name: Deletes the Old Version and Copies in the new
+        run: |
+          sudo rm /var/www/html/*
+          sudo cp $LATEST_VERSION/* /var/www/html
