@@ -1,0 +1,25 @@
+.list {
+  width: 100%;
+  border: 1px solid #575757;
+  border-radius: 1px;
+  margin: 10px;
+  background-color: #e0e0e0;
+}
+
+.list-section {
+  margin: 10px;
+  padding-bottom: 10px;
+}
+
+.list-section-header {
+  font-weight: bold;
+  border-bottom: 2px solid gray;
+  padding-left: 10px;
+}
+
+.list-item {
+  border-bottom: 2px solid gray;
+  padding-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
