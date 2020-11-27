@@ -33,7 +33,7 @@ jobs:
         with:
           artifacts: "dist/ElementalMasteryWiki/*"
           token: ${{ secrets.TOKEN }}
-          tag: v0.2.8
+          tag: v0.2.9
   deploy:
     needs: build
     runs-on: self-hosted
@@ -49,4 +49,5 @@ jobs:
       - name: Deletes the Old Version and Copies in the new
         run: |
           sudo rm /var/www/html/*
-          sudo cp ~/$LATEST_VERSION/* /var/www/html/
+          sudo cp ./tmp/* /var/www/html/
+          rm -r ./tmp
