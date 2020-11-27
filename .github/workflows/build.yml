@@ -33,7 +33,7 @@ jobs:
         with:
           artifacts: "dist/ElementalMasteryWiki/*"
           token: ${{ secrets.TOKEN }}
-          tag: v0.2.6
+          tag: v0.2.7
   deploy:
     needs: build
     runs-on: self-hosted
