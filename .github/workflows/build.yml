@@ -33,8 +33,9 @@ jobs:
         with:
           artifacts: "dist/ElementalMasteryWiki/*"
           token: ${{ secrets.TOKEN }}
-          tag: v0.2.3
+          tag: v0.2.4
   deploy:
+    needs: build
     runs-on: self-hosted
 
       # Steps represent a sequence of tasks that will be executed as part of the job
