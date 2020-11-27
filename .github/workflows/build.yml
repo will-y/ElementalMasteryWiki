@@ -1,4 +1,9 @@
-on: push
+on:
+  # Triggers the workflow on push or pull request events but only for the $default-branch branch
+  push:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 name: Build Angular
 jobs:
   build:
@@ -24,7 +29,7 @@ jobs:
       - name: npm install and npm run build
         run: |
           npm i
-          npm run build:prod
+          npm run build
       - name: Push Build to Releases
         uses: ncipollo/release-action@v1
         with:
